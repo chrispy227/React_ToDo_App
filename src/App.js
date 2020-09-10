@@ -12,8 +12,27 @@ function App() {
 	const [filteredTodos, setFilteredTodos] = useState([]);
 
 	// Functions and events
+	// Save to Local Browser Storage
 
 	// UseEffect runs once with no params on load, if given an param in [array], then will run for that state change.
+	// const saveLocalTodos = () => {
+	// 	localStorage.setItem("todos", JSON.stringify(todos));
+	// };
+	// const getLocalTodos = () => {
+	// 	if (localStorage.getItem("todos") === null) {
+	// 		localStorage.setItem("todos", JSON.stringify([]));
+	// 	} else {
+	// 		let todoLocal = JSON.parse(localStorage.getItem("todos"),
+	// 		setTodos(todoLocal),
+	// 	}
+	// }
+
+	// RUN ONCE on app start
+	// useEffect(() => {
+
+	// 	getLocalTodos();
+	// }, [todos])
+	// More than once
 	useEffect(() => {
 		const filterHandler = () => {
 			switch (status) {
@@ -28,7 +47,9 @@ function App() {
 					break;
 			}
 		};
+
 		filterHandler();
+		// saveLocalTodos();
 	}, [todos, status]);
 
 	return (
